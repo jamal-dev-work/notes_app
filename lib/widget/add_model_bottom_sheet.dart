@@ -6,36 +6,37 @@ class AddModelBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container
-    (
+    return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Column
-      (
-        mainAxisSize: MainAxisSize.min,
-        children: 
-        [
-          Text('Add Note' , style: Theme.of(context).textTheme.headlineSmall,),
-          const SizedBox(height: 16.0,),
-          CustomTextField(hintText: 'Title' , maxLines: 1, minLines: 1),
-          const SizedBox(height: 16.0,),
-          CustomTextField(hintText: 'Description' , maxLines: 5, minLines: 5),
-          const SizedBox(height: 16.0,),
-          ElevatedButton
-          (
-            style: ElevatedButton.styleFrom
+      child: SingleChildScrollView(
+        child: Column
+        (
+          mainAxisSize: MainAxisSize.min,
+          children: 
+          [
+            Text('Add Note' , style: Theme.of(context).textTheme.headlineSmall,),
+            const SizedBox(height: 16.0,),
+            CustomTextField(hintText: 'Title' , maxLines: 1, minLines: 1),
+            const SizedBox(height: 16.0,),
+            CustomTextField(hintText: 'Description' , maxLines: 5, minLines: 5),
+            const SizedBox(height: 16.0,),
+            ElevatedButton
             (
-              backgroundColor: Colors.blue,
-              foregroundColor: Colors.white,
-              minimumSize: const Size(double.infinity, 50),
-              shape: RoundedRectangleBorder
+              style: ElevatedButton.styleFrom
               (
-                borderRadius: BorderRadius.circular(16.0),
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.white,
+                minimumSize: const Size(double.infinity, 50),
+                shape: RoundedRectangleBorder
+                (
+                  borderRadius: BorderRadius.circular(16.0),
+                ),
               ),
+              onPressed: (){}, 
+              child: const Text('Add')
             ),
-            onPressed: (){}, 
-            child: const Text('Add')
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
